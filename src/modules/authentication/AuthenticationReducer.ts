@@ -8,7 +8,7 @@ export const APPLICATION_REDUCER_ACTIONS: IApplicationReducerActions = {
     SET_USER: "AUTHENTICATION:SET_USER"
 };
 
-interface IAuthenticationData {
+interface IAuthenticationData  {
     name: string,
     lastName: string,
     nickname?: string

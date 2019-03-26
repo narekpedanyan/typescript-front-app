@@ -1,10 +1,8 @@
 import { composeWithDevTools } from 'redux-devtools-extension';
-import {applyMiddleware, compose, createStore} from "redux";
 import reducer from '../services/reducer';
+import {createStore} from "redux";
 
 let store: any;
-const initialState: any = {};
-
 store = createStore(reducer, composeWithDevTools());
 
 export default store;
