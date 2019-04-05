@@ -9,15 +9,11 @@ export const APPLICATION_REDUCER_ACTIONS: IApplicationReducerActions = {
 };
 
 interface IAuthenticationData  {
-    name: string,
-    lastName: string,
-    nickname?: string
+    user: object
 }
 
 const defaultAuthenticationState: IAuthenticationData = {
-    name: "",
-    lastName: "",
-    nickname: ""
+    user: null
 };
 
 export default (state: IAuthenticationData = defaultAuthenticationState, {type, payload}: IAuthenticationActions): IAuthenticationData => {

@@ -3,8 +3,8 @@ import {APPLICATION_REDUCER_ACTIONS} from './AuthenticationReducer';
 export interface IAuthenticationActions {
     type: string,
     payload?: {
-        name: string,
-        lastName: string,
+        name?: string,
+        lastName?: string,
         nickname?: string
     }
 }
