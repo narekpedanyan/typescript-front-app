@@ -5,3 +5,76 @@
 @import './custom';
 //Stage 3
 @import 'components/loading';
+@import 'components/header';
+
+
+
+
+
+@mixin DisplayFlex{
+  display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;      /* TWEENER - IE 10 */
+  display: -webkit-flex;     /* NEW - Chrome */
+  display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+}
+
+.tool-tip{
+  width: 250px;
+  padding: 5px 10px;
+  @include DisplayFlex;
+  flex-direction: column;
+  border: 1px solid orange;
+  position: absolute;
+  top: 15%;
+  left: 15%;
+}
+
+.tool-tip-row{
+  @include DisplayFlex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.item {
+  @include DisplayFlex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.danger{
+  color: rgb(250, 0, 0);
+}
+
+.dots-icon,
+.lines-icon{
+  @include DisplayFlex;
+  flex-direction: row;
+  margin-right: 10px;
+  margin-left: 2px;
+}
+
+.dots-icon{
+  >span {
+    width: 5px;
+    height: 5px;
+    border-radius: 100%;
+    background: rgb(0, 0, 250);
+    &:not(:first-child) {
+      margin-left: 3px;
+    }
+  }
+}
+
+.lines-icon {
+  >span {
+    width: 7px;
+    height: 5px;
+    background: rgba(0, 0, 0, 0.5);
+    &:not(:first-child) {
+      margin-left: 3px;
+    }
+  }
+}

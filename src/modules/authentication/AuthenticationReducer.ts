@@ -1,24 +1,25 @@
-import {IAuthenticationActions} from "./AuthenticationAction";
+import { LoginAction, UserData } from './AuthenticationAction';
 
-interface IApplicationReducerActions {
-    SET_USER: string
+interface LoginState {
+    user: UserData;
+    isLoading: boolean;
+    error: string;
 }
 
-export const APPLICATION_REDUCER_ACTIONS: IApplicationReducerActions = {
-    SET_USER: "AUTHENTICATION:SET_USER"
+const initialState: LoginState = {
+    user: null,
+    error: null,
+    isLoading: false
 };
 
-interface IAuthenticationData  {
-    user: object
-}
-
-const defaultAuthenticationState: IAuthenticationData = {
-    user: null
-};
-
-export default (state: IAuthenticationData = defaultAuthenticationState, {type, payload}: IAuthenticationActions): IAuthenticationData => {
-    switch (type) {
-
+export function authData(state = initialState, action: LoginAction): LoginState {
+    switch (action.type) {
+        case 'LOGIN_REQUEST':
+            return {...state, isLoading: true}
+        case 'LOGIN_SUCCESS':
+            return {...state, isLoading: false, user: action.user}
+        case 'LOGIN_FAILED':
+            return {...state, isLoading: false, error: action.error}
         default:
             return state;
     }

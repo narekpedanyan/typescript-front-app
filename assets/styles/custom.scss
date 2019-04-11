@@ -1,0 +1,38 @@
+.auth-wrapper{
+  @include DisplayFlex;
+  width: 100%;
+  height: calc(100vh - 70px);
+  align-items: center;
+  justify-content: center;
+}
+
+.popup{
+  width: 360px;
+  padding: 25px 15px;
+  border: 2px solid rgba(0, 0, 0, 0.5);
+  border-radius: 12px;
+  @include DisplayFlex;
+}
+
+.login-wrap{
+  @include DisplayFlex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.auth-field{
+  height: 35px;
+  padding: 0 10px;
+  margin-bottom: 15px;
+}
+
+.form-btn{
+  width: auto;
+  font-size: 12px;
+  padding: 0 12px;
+  height: 32px;
+  background: rgb(34,139,34);
+  color: #fff;
+  border-radius: 3px;
+  cursor: pointer;
+}

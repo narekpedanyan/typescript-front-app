@@ -11,3 +11,13 @@
   display: -webkit-flex;     /* NEW - Chrome */
   display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
 }
+
+.row-center{
+  @include DisplayFlex;
+  justify-content: center;
+}
+
+.warning{
+  font-size: 12px;
+  color: rgb(250,0,0);
+}

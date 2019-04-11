@@ -4,4 +4,12 @@
   @include BoxSizing('border-box');
 }
 
+ul{
+  list-style-type: none;
+}
 
+button{
+  background: transparent;
+  border: none;
+  outline: none;
+}

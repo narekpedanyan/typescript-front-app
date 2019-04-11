@@ -5,11 +5,12 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
     entry: './src/index.tsx',
     resolve: {
-        extensions: ['.ts', '.tsx', '.js', '.css', '.scss']
+        extensions: ['.ts', '.jsx', '.tsx', '.js', '.css', '.scss']
     },
     output: {
         path: path.join(__dirname, '/dist'),
-        filename: 'bundle.min.js'
+        filename: 'bundle.min.js',
+        publicPath: '/'
     },
     module: {
         rules: [
@@ -34,6 +35,7 @@ module.exports = {
     ],
     devServer: {
         inline:true,
-        port: 3300
+        port: 3300,
+        historyApiFallback: true
     }
 };
